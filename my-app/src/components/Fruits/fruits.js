@@ -5,13 +5,15 @@ const Fruits = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <div className="card">
       <p>{children}</p>
       <img src={Banana} alt="Banana"></img>
       <p>R$</p>
       <p>Unidades ou gramas</p>
-      <button>+</button>
-      <button>-</button>
+      <div className="card-button">
+        <button>+</button>
+        <button>-</button>
+      </div>
     </div>
   );
 };
