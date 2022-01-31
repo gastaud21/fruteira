@@ -1,4 +1,5 @@
 import Fruits from "../components/Fruits/fruits";
+import Background from "../components/Background/background";
 import Banana from "../components/Fruits/Banana.jpg";
 import Maça from "../components/Fruits/Maça.jpg";
 import Laranja from "../components/Fruits/Laranja.jpg";
@@ -10,19 +11,19 @@ const Home = () => {
     { name: "Banana", unity: "kg", price: 6.0, image: Banana },
     { name: "Maça", unity: "kg", price: 3.0, image: Maça },
     { name: "Laranja", unity: "kg", price: 5.5, image: Laranja },
-    { name: "Abacate", unity: "unidade", price: 5.0, image: Abacate },
-    { name: "Manga", unity: "unidade", price: 6.0, image: Manga },
+    { name: "Abacate", unity: "unidade(s)", price: 5.0, image: Abacate },
+    { name: "Manga", unity: "unidade(s)", price: 6.0, image: Manga },
   ];
 
   return (
-    <div>
+    <Background>
       {fruitList.map((fruit) => (
-        <Fruits price={fruit.price} image={fruit.image}>
+        <Fruits price={fruit.price} unity={fruit.unity} image={fruit.image}>
           {fruit.name}
         </Fruits>
       ))}
       {/* <Fruits image={Banana}>Banana</Fruits> */}
-    </div>
+    </Background>
   );
 };
 

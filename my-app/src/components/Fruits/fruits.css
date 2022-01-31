@@ -12,6 +12,7 @@ img {
   flex-direction: column;
   padding: 10px;
   margin: 10px;
+  background: #fff;
 }
 
 p {
@@ -25,5 +26,9 @@ p {
 
 .card-quantity-button {
   width: 30px;
+  cursor: pointer;
+}
+
+.card-submit {
   cursor: pointer;
 }
