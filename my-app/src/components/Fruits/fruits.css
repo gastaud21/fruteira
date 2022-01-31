@@ -18,11 +18,12 @@ p {
   align-self: center;
 }
 
-.card-button {
+.card-quantity {
   display: flex;
   justify-content: center;
 }
 
-button {
+.card-quantity-button {
   width: 30px;
+  cursor: pointer;
 }
