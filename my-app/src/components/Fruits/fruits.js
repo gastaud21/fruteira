@@ -30,7 +30,12 @@ const Fruits = (props) => {
           -
         </button>
       </div>
-      <button className="card-submit">Adicionar ao carrinho</button>
+      <button
+        className="card-submit"
+        onClick={() => localStorage.setItem(`${children}`, `${count * price}`)}
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
   );
 };

@@ -9,6 +9,18 @@
   font-weight: 500;
 }
 
+.main-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-buttons-routes {
+  width: 200px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .main-cards {
   display: flex;
   justify-content: center;
