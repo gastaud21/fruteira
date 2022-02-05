@@ -1,5 +1,7 @@
 .main {
   background: #6b8e23;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-title {

@@ -2,7 +2,7 @@ import "./fruits.css";
 import { useState } from "react";
 
 const Fruits = (props) => {
-  const { children, image, price, unity } = props;
+  const { children, image, price, unity, cliking, id } = props;
   const [count, setCount] = useState(0);
 
   return (
@@ -14,7 +14,7 @@ const Fruits = (props) => {
       </p>
       <p>Total deste produto: R$ {count * price}</p>
       <p>
-        Quanto você quer? {count} {unity}
+        Quanto você quer? {count} {unity === "unidade" ? "unidades" : "kg"}
       </p>
       <div className="card-quantity">
         <button
@@ -32,7 +32,16 @@ const Fruits = (props) => {
       </div>
       <button
         className="card-submit"
-        onClick={() => localStorage.setItem(`${children}`, `${count * price}`)}
+        onClick={() =>
+          cliking({
+            id,
+            name: children,
+            image,
+            unity,
+            totalItem: count * price,
+            quantity: count,
+          })
+        }
       >
         Adicionar ao carrinho
       </button>
