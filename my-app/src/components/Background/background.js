@@ -10,7 +10,7 @@ const background = (props) => {
         <Link to="/">
           <button className="main-buttons-routes">Home</button>
         </Link>
-        <Link to="CarShop">
+        <Link to="CartShop">
           <button className="main-buttons-routes">Carrinho de Compras</button>
         </Link>
       </div>

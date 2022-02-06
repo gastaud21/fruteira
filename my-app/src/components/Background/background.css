@@ -2,6 +2,7 @@
   background: #6b8e23;
   display: flex;
   flex-direction: column;
+  width: fit-content;
 }
 
 .main-title {
@@ -9,11 +10,14 @@
   text-align: center;
   background-color: #228b22;
   font-weight: 500;
+  margin: 20px 0;
+  width: 100%;
 }
 
-.main-button {
+.main-buttons {
   display: flex;
   flex-direction: row;
+  margin: 0 0 0 10px;
 }
 
 .main-buttons-routes {
@@ -26,4 +30,10 @@
 .main-cards {
   display: flex;
   justify-content: center;
+  width: fit-content;
+}
+
+Link {
+  display: flex;
+  margin: 10px;
 }

@@ -1,12 +1,27 @@
 import Background from "../components/Background/background";
-import CarFruits from "../components/CarFruits/CarFruits";
+import CartFruits from "../components/CarFruits/CarFruits";
+import { setItem, getItem } from "../helpers/storageHelper";
 
-const CarShop = () => {
+const CartShop = () => {
+  console.log(getItem());
+  const toListCart = getItem();
   return (
     <Background>
-      <CarFruits>FRUTEIRA</CarFruits>
+      <div>
+        {toListCart.map((item) => (
+          <CartFruits
+            name={item.name}
+            quantity={item.quantity}
+            price={item.price}
+            totalPrice={item.totalItem}
+            image={item.image}
+            key={item.id}
+            unity={item.unity}
+          />
+        ))}
+      </div>
     </Background>
   );
 };
 
-export default CarShop;
+export default CartShop;

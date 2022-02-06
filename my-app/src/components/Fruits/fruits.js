@@ -38,6 +38,7 @@ const Fruits = (props) => {
             name: children,
             image,
             unity,
+            price,
             totalItem: count * price,
             quantity: count,
           })

@@ -1,0 +1,31 @@
+.cardItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 700px;
+  justify-content: space-evenly;
+}
+
+.cardItem-image {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 10px;
+}
+
+.cardItem-name {
+  margin: 10px;
+}
+
+.cardItem-quantity {
+  text-align: center;
+}
+
+.cardItem-price {
+  text-align: center;
+}
+
+.cardItem-totalPrice {
+  text-align: center;
+}
