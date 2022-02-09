@@ -12,6 +12,13 @@ const CartShop = () => {
     setItem(newCart);
   };
 
+  const removeItem = (fruitName) => {
+    const cart = getItem();
+    const itemToRemove = cart.filter((item) => item.name === fruitName);
+    const newCart = cart.filter((item) => item !== itemToRemove[0]);
+    setItem(newCart);
+  };
+
   return (
     <Background>
       <div>
@@ -26,6 +33,7 @@ const CartShop = () => {
             unity={item.unity}
             id={item.id}
             cliking={handleClick}
+            clikingToRemove={removeItem}
           />
         ))}
         <button style={{ cursor: "pointer" }}>FINALIZAR COMPRA</button>

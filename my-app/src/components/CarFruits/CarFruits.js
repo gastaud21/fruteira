@@ -2,10 +2,18 @@ import "./CarFruits.css";
 import { useState } from "react";
 
 const CartFruits = (props) => {
-  const { image, name, quantity, price, totalPrice, unity, id, cliking } =
-    props;
+  const {
+    image,
+    name,
+    quantity,
+    price,
+    totalPrice,
+    unity,
+    id,
+    cliking,
+    clikingToRemove,
+  } = props;
   const [count, setCount] = useState(quantity);
-  // console.log(count);
 
   return (
     <div className="cardItem">
@@ -65,7 +73,10 @@ const CartFruits = (props) => {
           carrinho
         </button>
       </div>
-      <button className="cardItem-removeItem">
+      <button
+        className="cardItem-removeItem"
+        onClick={() => clikingToRemove(name)}
+      >
         Remover Item
         <br />
         do carrinho
