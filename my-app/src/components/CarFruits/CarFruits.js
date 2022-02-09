@@ -1,21 +1,11 @@
 import "./CarFruits.css";
-import { useEffect, useState } from "react";
-import { setItem } from "../../helpers/storageHelper";
+import { useState } from "react";
 
 const CartFruits = (props) => {
-  const { image, name, quantity, price, totalPrice, unity, id } = props;
+  const { image, name, quantity, price, totalPrice, unity, id, cliking } =
+    props;
   const [count, setCount] = useState(quantity);
   // console.log(count);
-
-  const toPushCart = {
-    id,
-    name,
-    image,
-    unity,
-    price,
-    quantity: count,
-    totalItem: count * price,
-  };
 
   return (
     <div className="cardItem">
@@ -56,7 +46,20 @@ const CartFruits = (props) => {
             -
           </button>
         </div>
-        <button className="cardItem-changeQuantity-AddToCart">
+        <button
+          className="cardItem-changeQuantity-AddToCart"
+          onClick={() =>
+            cliking({
+              id,
+              name,
+              image,
+              unity,
+              price,
+              quantity: count,
+              totalItem: count * price,
+            })
+          }
+        >
           Adicionar ao
           <br />
           carrinho
