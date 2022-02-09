@@ -28,6 +28,8 @@ p {
 .card-quantity-button {
   width: 30px;
   cursor: pointer;
+  margin: 0 5px;
+  border-radius: 10px;
 }
 
 .card-submit {

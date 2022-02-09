@@ -1,9 +1,8 @@
 import Background from "../components/Background/background";
 import CartFruits from "../components/CarFruits/CarFruits";
-import { setItem, getItem } from "../helpers/storageHelper";
+import { getItem } from "../helpers/storageHelper";
 
 const CartShop = () => {
-  console.log(getItem());
   const toListCart = getItem();
   return (
     <Background>
@@ -17,8 +16,10 @@ const CartShop = () => {
             image={item.image}
             key={item.id}
             unity={item.unity}
+            id={item.id}
           />
         ))}
+        <button style={{ cursor: "pointer" }}>FINALIZAR COMPRA</button>
       </div>
     </Background>
   );
