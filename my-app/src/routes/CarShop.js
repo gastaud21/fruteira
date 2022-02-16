@@ -37,7 +37,7 @@ const CartShop = () => {
   };
 
   return (
-    <Background>
+    <Background cartLink="none">
       <div>
         {listWindow.map((item) => (
           <CartFruits
