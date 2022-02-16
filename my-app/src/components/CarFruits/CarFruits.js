@@ -14,6 +14,7 @@ const CartFruits = (props) => {
     clikingToRemove,
   } = props;
   const [count, setCount] = useState(quantity);
+  console.log(count);
 
   return (
     <div className="cardItem">
@@ -32,7 +33,7 @@ const CartFruits = (props) => {
       <p className="cardItem-totalPrice">
         Subtotal:
         <br />
-        R$ {totalPrice}
+        R$ {totalPrice + (count - quantity) * price}
       </p>
       <div className="cardItem-changeQuantity">
         <p className="cardItem-changeQuantity-title">
