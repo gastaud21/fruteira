@@ -7,6 +7,7 @@ const CartShop = () => {
   const toListCart = getItem();
   const [listWindow, setListWindow] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
+  const [update, setUpdate] = useState([]);
 
   useEffect(() => {
     setListWindow(toListCart);
@@ -16,12 +17,13 @@ const CartShop = () => {
       total = total + item.total;
     });
     setTotalCart(total);
-  }, [listWindow, toListCart]);
+  }, [update]);
 
   const handleClick = (fruit) => {
     const cart = getItem();
     const newCart = cart.filter((item) => item.id !== fruit.id);
     newCart.push(fruit);
+    setUpdate(newCart);
     setItem(newCart);
   };
 
@@ -29,6 +31,7 @@ const CartShop = () => {
     const cart = getItem();
     const itemToRemove = cart.filter((item) => item.name === fruitName);
     const newCart = cart.filter((item) => item !== itemToRemove[0]);
+    setUpdate(newCart);
     setItem(newCart);
   };
 
