@@ -1,6 +1,6 @@
 import Background from "../components/Background/background";
 import CartFruits from "../components/CarFruits/CarFruits";
-import { getItem, setItem } from "../helpers/storageHelper";
+import { getItem, setItem, sortByID } from "../helpers/storageHelper";
 import { useState, useEffect } from "react";
 
 const CartShop = () => {
@@ -14,7 +14,7 @@ const CartShop = () => {
     const cart = getItem();
     let total = 0;
     cart.forEach((item) => {
-      total = total + item.total;
+      total = total + item.totalItem;
     });
     setTotalCart(total);
   }, [update]);
@@ -24,6 +24,7 @@ const CartShop = () => {
     const newCart = cart.filter((item) => item.id !== fruit.id);
     newCart.push(fruit);
     setUpdate(newCart);
+    sortByID(newCart);
     setItem(newCart);
   };
 
@@ -52,7 +53,27 @@ const CartShop = () => {
             clikingToRemove={removeItem}
           />
         ))}
-        <button style={{ cursor: "pointer" }}>FINALIZAR COMPRA</button>
+        <div style={{ display: "flex" }}>
+          <button
+            style={{
+              cursor: "pointer",
+              width: "200px",
+              height: "40px",
+              margin: "30px",
+              borderRadius: "10px",
+            }}
+          >
+            <b>FINALIZAR COMPRA</b>
+          </button>
+          <p
+            style={{
+              border: "1px dashed black",
+              padding: "10px",
+            }}
+          >
+            Total : <b>R$ {totalCart}</b>
+          </p>
+        </div>
       </div>
     </Background>
   );
