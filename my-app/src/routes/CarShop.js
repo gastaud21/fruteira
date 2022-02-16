@@ -8,6 +8,7 @@ const CartShop = () => {
   const [listWindow, setListWindow] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
   const [update, setUpdate] = useState([]);
+  const [theToast, setTheToast] = useState("none");
 
   useEffect(() => {
     setListWindow(toListCart);
@@ -62,6 +63,7 @@ const CartShop = () => {
               margin: "30px",
               borderRadius: "10px",
             }}
+            onClick={() => setTheToast("flex")}
           >
             <b>FINALIZAR COMPRA</b>
           </button>
@@ -73,6 +75,45 @@ const CartShop = () => {
           >
             Total : <b>R$ {totalCart}</b>
           </p>
+        </div>
+        <div
+          style={{
+            position: "fixed",
+            display: `${theToast}`,
+            bottom: "0",
+            left: "0",
+            width: "100%",
+            justifyContent: "space-between",
+            backgroundColor: "rgb(100, 0, 100)",
+            fontFamily: "sans-serif",
+          }}
+        >
+          <p
+            style={{
+              color: "#fff",
+              margin: "0",
+              padding: "2em",
+              textDecoration: "none",
+            }}
+          >
+            Compra finalizada!
+          </p>
+          <button
+            style={{
+              color: "#fff",
+              margin: "10px",
+              padding: "2em",
+              textDecoration: "none",
+              width: "20px",
+              height: "20px",
+              cursor: "pointer",
+              backgroundColor: "transparent",
+              border: "none",
+            }}
+            onClick={() => setTheToast("none")}
+          >
+            X
+          </button>
         </div>
       </div>
     </Background>
