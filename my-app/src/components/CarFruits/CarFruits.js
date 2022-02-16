@@ -14,7 +14,6 @@ const CartFruits = (props) => {
     clikingToRemove,
   } = props;
   const [count, setCount] = useState(quantity);
-  console.log(count);
 
   return (
     <div className="cardItem">
